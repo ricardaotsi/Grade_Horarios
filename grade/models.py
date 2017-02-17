@@ -1,3 +1,25 @@
 from django.db import models
 
-# Create your models here.
+class Dia_Semana(models.Model):
+    dia_semana = models.CharField(max_length=8)
+
+class Horario(models.Model):
+    horario = models.IntegerField()
+
+class Sala(models.Model):
+    sala = models.CharField(max_length=50)
+
+class Materia(models.Model):
+    nome_materia = models.CharField(max_length=50)
+
+class Curso(models.Model):
+    nome_curso = models.CharField(max_length=50)
+
+class Professor(models.Model):
+    nome_professor = models.CharField(max_length=50)
+
+class Turno(models.Model):
+    turno = models.CharField(max_length=10)
+
+class Turma(models.Model):
+    periodo = models.IntegerField()
