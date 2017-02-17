@@ -1,0 +1,19 @@
+img{
+    width: 50%;
+}
+
+.navbar-brand{
+    padding-top: 0;
+}
+
+.navbar-right{
+    padding-right: 10px;
+}
+
+body{
+    padding-top: 50px;
+}
+
+h1{
+    text-align: center;
+}
