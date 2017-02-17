@@ -18,14 +18,12 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-
     </head>
     <body>
-
         <nav class="nav navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="">
                         <img alt= "Brand" class="img-responsive" src="{% static 'images/ifpr_logo.png' %}" />
                     </a>
                 </div>
@@ -36,64 +34,18 @@
                 </div>
             </div>
         </nav>
+
         <div class="container">
             <div class="row">
-                <h1>Ensalamento</h1>
-                <hr>
-                <div class="col-md-4">
-                    <h2>Manhã</h2>
-                    <table class="table table-bordered table-striped">
-                        <tr>
-                            <th>Sala</th>
-                            <th>Período</th>
-                            <th>Curso</th>
-                        </tr>
-                        <tr>
-                            <td>101</td>
-                            <td>1º</td>
-                            <td>Bacharel Ciencias Contabeis</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="col-md-4">
-                    <h2>Tarde</h2>
-                    <table class="table table-bordered table-striped">
-                        <tr>
-                            <th>Sala</th>
-                            <th>Período</th>
-                            <th>Curso</th>
-                        </tr>
-                        <tr>
-                            <td>101</td>
-                            <td>1º</td>
-                            <td>Bacharel Ciencias Contabeis</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="col-md-4">
-                    <h2>Noite</h2>
-                    <table class="table table-bordered table-striped">
-                        <tr>
-                            <th>Sala</th>
-                            <th>Período</th>
-                            <th>Curso</th>
-                        </tr>
-                        <tr>
-                            <td>101</td>
-                            <td>1º</td>
-                            <td>Bacharel Ciencias Contabeis</td>
-                        </tr>
-                    </table>
-                </div>
+                {% block content %}
+                {% endblock %}
             </div>
-
             <hr>
 
             <footer>
                 <p>&copy; 2016 Company, Inc.</p>
             </footer>
         </div> <!-- /container -->
-
 
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
