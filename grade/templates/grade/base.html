@@ -24,7 +24,7 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="/">
-                        <img alt= "Brand" class="img-responsive" src="{% static 'images/ifpr_logo.png' %}" />
+                        <img alt= "Brand" class="img-responsive brand" src="{% static 'images/ifpr_logo.png' %}" />
                     </a>
                 </div>
                 <div class="collapse navbar-collapse">
@@ -38,19 +38,18 @@
                 </div>
             </div>
         </nav>
-
         <div class="container">
             <div class="row">
                 {% block content %}
                 {% endblock %}
             </div>
             <hr>
-
-            <footer>
-                <p>&copy; 2016 Company, Inc.</p>
+            <footer class="footer">
+                <div class="navbar-brand">
+                    <img class="img-responsive" src="{% static 'images/footer.png' %}" />
+                </div>
             </footer>
         </div> <!-- /container -->
-
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
