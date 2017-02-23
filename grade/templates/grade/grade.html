@@ -1,0 +1,12 @@
+{% extends 'grade/base.html' %}
+
+{% block content %}
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="">Pesquisar Grade</a></li>
+            <li><a href="{% url 'grade:curso' %}">Cursos</a></li>
+            <li><a href="#">Matérias</a></li>
+            <li><a href="#">Professores</a></li>
+          </ul>
+        </div>
+{% endblock %}

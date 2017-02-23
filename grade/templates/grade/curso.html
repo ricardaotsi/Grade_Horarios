@@ -1,0 +1,61 @@
+{% extends 'grade/base.html' %}
+
+{% block content %}
+<div class="col-sm-3 col-md-2 sidebar">
+    <ul class="nav nav-sidebar">
+        <li><a href="{% url 'grade:grade' %}">Pesquisar Grade</a></li>
+        <li class="active"><a href="">Cursos</a></li>
+        <li><a href="#">Matérias</a></li>
+        <li><a href="#">Professores</a></li>
+    </ul>
+</div>
+
+<h1>Cursos</h1>
+
+<div class="col-sm-9 col-md-10">
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                        <span class="glyphicon glyphicon-list"></span>Cursos</a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div class="row curso">
+                        {% for curso in curso %}
+                            <li>{{curso.nome_curso}}</li>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-plus">
+                    </span>Cadastrar Curso</a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div class="row curso">
+                        <form method="POST">{% csrf_token %}
+                            <div class="form-group">
+                                <input id="id_nome_curso" maxlength="50" name="nome_curso" type="text" class="form-control" placeholder="Nome do Curso" required /><br>
+                                <select multiple="multiple" id="id_materia" name="materia" size="10" class="form-control">
+                                </select>
+                            </div>
+                            <button type="submit" class="save btn btn-default">Salvar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,8 +1,7 @@
 {% extends "grade/base.html" %}
 
-{% block title %}Login{% endblock %}
-
 {% block content %}
+<div class="col-md-12 login">
 <h1>Login</h1>
 <form method="post" class="teste">{% csrf_token %}
     <div class="form-group">
@@ -16,4 +15,5 @@
         <p class=" label label-danger">Usuário e/ou senha incorretos. Tente novamente.</p>
     {% endif %}
 </form>
+</div>
 {% endblock %}

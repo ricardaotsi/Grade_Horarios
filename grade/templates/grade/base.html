@@ -32,7 +32,7 @@
                         {% if user.is_authenticated %}
                             <li><a href="{% url 'logout' %}">Sair</a></li>
                         {% else %}
-                            <li><a href="{% url 'grade:teste' %}">Entrar</a></li>
+                            <li><a href="{% url 'grade:grade' %}">Entrar</a></li>
                         {% endif %}
                     </ul>
                 </div>
@@ -40,8 +40,8 @@
         </nav>
         <div class="container">
             <div class="row">
-                {% block content %}
-                {% endblock %}
+            {% block content %}
+            {% endblock %}
             </div>
             <hr>
             <footer class="footer">

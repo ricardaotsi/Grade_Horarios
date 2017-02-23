@@ -14,11 +14,11 @@ class Materia(models.Model):
 
 class Curso(models.Model):
     nome_curso = models.CharField(max_length=50)
-    materia = models.ManyToManyField(Materia)
+    materia = models.ManyToManyField(Materia, blank=True)
 
 class Professor(models.Model):
     nome_professor = models.CharField(max_length=50)
-    materia = models.ManyToManyField(Materia)
+    materia = models.ManyToManyField(Materia, blank=True)
 
 class Turno(models.Model):
     turno = models.CharField(max_length=10)
