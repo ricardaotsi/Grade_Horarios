@@ -21,3 +21,15 @@ def cadastrocurso(request):
     else:
         formulario = CursoForm()
     return render(request, 'grade/curso.html', {'formulario':formulario, 'curso':curso})
+
+@login_required
+def cadastromateria(request):
+    materia = Materia.objects.order_by('nome_materia')
+    if request.method == "POST":
+        formulario = MateriaForm(request.POST)
+        if formulario.is_valid():
+            temp_materia = formulario.save(commit=False)
+            temp_materia.save()
+    else:
+        formulario = MateriaForm()
+    return render(request, 'grade/materia.html', {'formulario': formulario, 'materia': materia})

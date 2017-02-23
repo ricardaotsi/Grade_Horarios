@@ -4,8 +4,8 @@
 <div class="col-sm-3 col-md-2 sidebar">
     <ul class="nav nav-sidebar">
         <li><a href="{% url 'grade:grade' %}">Pesquisar Grade</a></li>
-        <li class="active"><a href="">Cursos</a></li>
-        <li><a href="{% url 'grade:materia' %}">Matérias</a></li>
+        <li><a href="{% url 'grade:curso' %}">Cursos</a></li>
+        <li class="active"><a href="">Matérias</a></li>
         <li><a href="#">Professores</a></li>
     </ul>
 </div>
@@ -19,7 +19,7 @@
             <div class="panel-heading">
                 <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                        <span class="glyphicon glyphicon-plus"></span>Cadastrar Curso</a>
+                        <span class="glyphicon glyphicon-plus"></span>Cadastrar Matéria</a>
                 </h4>
             </div>
             <div id="collapseTwo" class="panel-collapse collapse">
@@ -27,11 +27,7 @@
                     <div class="row curso">
                         <form method="POST">{% csrf_token %}
                             <div class="form-group">
-                                {{ formulario.nome_curso|add_class:'form-control'|attr:'placeholder:Nome do Curso' }}
-                                <br>
-                                {{ formulario.materia|add_class:'form-control'|attr:'size:10'}}
-                                <select multiple="multiple" id="id_materia" name="materia" size="10" class="form-control">
-                                </select>
+                                {{ formulario.nome_materia|add_class:'form-control'|attr:'placeholder:Nome da Matéria' }}
                             </div>
                             <button type="submit" class="save btn btn-default">Salvar</button>
                         </form>
@@ -44,14 +40,14 @@
             <div class="panel-heading">
                 <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                        <span class="glyphicon glyphicon-list"></span>Cursos</a>
+                        <span class="glyphicon glyphicon-list"></span>Matérias</a>
                 </h4>
             </div>
             <div id="collapseOne" class="panel-collapse collapse in">
                 <div class="panel-body">
                     <div class="row curso">
-                        {% for curso in curso %}
-                             <p>{{curso.nome_curso}}</p>
+                        {% for materia in materia %}
+                             <p>{{ materia.nome_materia }}</p>
                         {% endfor %}
                     </div>
                 </div>
