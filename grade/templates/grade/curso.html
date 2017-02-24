@@ -49,7 +49,9 @@
                 <div class="panel-body">
                     <div class="row curso">
                         {% for curso in curso %}
-                             <p>{{curso.nome_curso}}</p>
+                            <div class="col-md-3">
+                                <p class="listacurso"><a>{{curso.nome_curso|title}}</a></p>
+                            </div>
                         {% endfor %}
                     </div>
                 </div>

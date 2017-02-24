@@ -62,3 +62,12 @@ h1{
     padding-left: 300px;
     padding-right: 300px;
 }
+
+.listacurso, .listamateria{
+    text-align: center;
+    background-color: #309F41;
+}
+
+.listacurso > a, .listamateria > a{
+    color: #fff;
+}

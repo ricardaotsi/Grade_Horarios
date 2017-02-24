@@ -47,7 +47,9 @@
                 <div class="panel-body">
                     <div class="row curso">
                         {% for materia in materia %}
-                             <p>{{ materia.nome_materia }}</p>
+                            <div class="col-md-3">
+                                <p class="bg-success listamateria"><a>{{ materia.nome_materia|title }}</a></p>
+                            </div>
                         {% endfor %}
                     </div>
                 </div>

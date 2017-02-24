@@ -1,5 +1,7 @@
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
+
 from .forms import *
 from .models import *
 
@@ -22,9 +24,10 @@ def cadastrocurso(request):
             if formulario.cleaned_data['materias']:
                 c.materia = formulario.cleaned_data['materias']
                 c.save()
+        return HttpResponseRedirect('Cursos')
     else:
         formulario = CursoForm()
-    return render(request, 'grade/curso.html', {'formulario':formulario, 'curso':curso})
+        return render(request, 'grade/curso.html', {'formulario':formulario, 'curso':curso})
 
 @login_required
 def cadastromateria(request):
@@ -34,6 +37,7 @@ def cadastromateria(request):
         if formulario.is_valid():
             temp_materia = formulario.save(commit=False)
             temp_materia.save()
+            return HttpResponseRedirect('Materia')
     else:
         formulario = MateriaForm()
-    return render(request, 'grade/materia.html', {'formulario': formulario, 'materia': materia})
+        return render(request, 'grade/materia.html', {'formulario': formulario, 'materia': materia})
