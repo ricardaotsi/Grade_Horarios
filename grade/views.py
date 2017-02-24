@@ -16,8 +16,12 @@ def cadastrocurso(request):
     if request.method == "POST":
         formulario = CursoForm(request.POST)
         if formulario.is_valid():
-            temp_curso = formulario.save(commit=False)
-            temp_curso.save()
+            c = Curso()
+            c.nome_curso = formulario.cleaned_data['nome_curso']
+            c.save()
+            if formulario.cleaned_data['materias']:
+                c.materia = formulario.cleaned_data['materias']
+                c.save()
     else:
         formulario = CursoForm()
     return render(request, 'grade/curso.html', {'formulario':formulario, 'curso':curso})

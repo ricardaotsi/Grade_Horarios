@@ -29,9 +29,7 @@
                             <div class="form-group">
                                 {{ formulario.nome_curso|add_class:'form-control'|attr:'placeholder:Nome do Curso' }}
                                 <br>
-                                {{ formulario.materia|add_class:'form-control'|attr:'size:10'}}
-                                <select multiple="multiple" id="id_materia" name="materia" size="10" class="form-control">
-                                </select>
+                                {{ formulario.materias|add_class:'form-control'|attr:'size:10' }}
                             </div>
                             <button type="submit" class="save btn btn-default">Salvar</button>
                         </form>

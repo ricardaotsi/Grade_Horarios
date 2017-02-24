@@ -11,6 +11,8 @@ class Sala(models.Model):
 
 class Materia(models.Model):
     nome_materia = models.CharField(max_length=50)
+    def __str__(self):
+        return self.nome_materia
 
 class Curso(models.Model):
     nome_curso = models.CharField(max_length=50)
